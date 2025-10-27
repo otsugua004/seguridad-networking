@@ -1,4 +1,4 @@
-name: CI-DockerBuild
+name: CI-Networking
 
 on: 
   push:
