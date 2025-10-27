@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-micro-a-to-micro-b-ingress
+  namespace: otsugua04-dev
+spec:
+  podSelector:
+    matchLabels:
+      app: mi-app-otsugua-srv2  # Aplica esta política a los pods etiquetados como micro-b
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: mi-app-otsugua  # Permite solo el tráfico proveniente de micro-a
+      ports:
+        - protocol: TCP
+          port: 3000  # Puerto de destino en micro-b (ajústalo según tu app)
