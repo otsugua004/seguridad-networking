@@ -1,12 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-ingress-to-micro-a
+  name: allow-ingress-to-micro-srv2
   namespace: otsugua04-dev
 spec:
   podSelector:
     matchLabels:
-      app: mi-app-otsugua  # Aplica esta política a los pods etiquetados como micro-b
+      app: mi-app-otsugua-srv2  # Aplica esta política a los pods etiquetados como micro-b
   policyTypes:
     - Ingress
   ingress:
