@@ -27,4 +27,5 @@ jobs:
       - name: Deploy files
         run: |
           oc project otsugua04-dev
-          oc apply -f ./
+          oc apply -f ./private.yaml
+          oc apply -f ./public.yaml
