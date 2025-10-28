@@ -8,12 +8,12 @@ spec:
     matchLabels:
       app: mi-app-otsugua-srv2  # Aplica esta política a los pods etiquetados como micro-b
   policyTypes:
-    - Egress
-  egress:
-    - to:
-        - podSelector:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
             matchLabels:
-              app: mi-app-otsugua
+              network.openshift.io/policy-group: ingress
       ports:
         - protocol: TCP
           port: 3000  # Puerto de destino en micro-b (ajústalo según tu app)
