@@ -17,3 +17,13 @@ spec:
       ports:
         - protocol: TCP
           port: 3000  # Puerto de destino en micro-b (ajústalo según tu app)
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-same-namespace
+spec:
+  podSelector:
+  ingress:
+  - from:
+    - podSelector: {}
