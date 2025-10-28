@@ -14,9 +14,9 @@ spec:
         - namespaceSelector:
             matchLabels:
               network.openshift.io/policy-group: ingress
-#      ports:
-#        - protocol: TCP
-#          port: 3000  # Puerto de destino en micro-b (ajústalo según tu app)
+      ports:
+        - protocol: TCP
+          port: 3000  # Puerto de destino en micro-b (ajústalo según tu app)
 
 ---
 kind: NetworkPolicy
