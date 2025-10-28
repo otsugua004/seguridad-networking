@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-egress-from-mi-app-otsugua-srv2-to-mi-app-otsugua
+  name: allow-ingress-to-mi-app-otsugua-srv2-from-openshift-ingress
   namespace: otsugua04-dev
 spec:
   podSelector:
